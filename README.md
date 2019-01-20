@@ -8,10 +8,16 @@ Controlery do folderu controllers, DTO do dto, itd.
 
 Szybkie wyjaśnienie:
 DTO (data transfer object) - służy do pobierania/wyrzucania danych z/na strony, składa się z prostych typów zmiennych
+
 Controller - przekierowuje zapytania z paska adresu; wpisujesz adres w pasku adresu -> controller decyduje co z tym dalej zrobić
+
 Service - warstwa logiczna (wszystkie funkcje które coś 'robią' przetwarzają
+
 Repository - warstwa do pobierania danych z bazy, można pisać native query (czysty sql) lub korzystać z JPA (automatyczne generowanie zapyania przez nazwę funkcji, podpowiedzi w klasach java, dla kotlina nie podpowiada)
+
 Model - to entity czyli ogólnie mówiąc odwzorowanie tabel z bazy danych, a hibernate je automatycznie mapuje
+
+
 
 LINKI:
 
