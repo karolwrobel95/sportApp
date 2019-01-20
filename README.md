@@ -13,3 +13,9 @@ Rejestracja:
 
 Logowanie:
 - http://localhost:8080/login
+
+Lista boisk:
+- http://localhost:8080/places/list/
+
+Dodawanie nowego boiska:
+- http://localhost:8080/places/add/
