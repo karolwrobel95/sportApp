@@ -7,6 +7,7 @@ Nie chce mi się robić modularyzacji więc wrzucamy wszystko do jedno wora:
 Controlery do folderu controllers, DTO do dto, itd.
 
 Szybkie wyjaśnienie:
+
 DTO (data transfer object) - służy do pobierania/wyrzucania danych z/na strony, składa się z prostych typów zmiennych
 
 Controller - przekierowuje zapytania z paska adresu; wpisujesz adres w pasku adresu -> controller decyduje co z tym dalej zrobić
