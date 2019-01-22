@@ -2,7 +2,6 @@ package com.gpch.login.model
 
 
 import javax.persistence.*
-import javax.validation.constraints.NotBlank
 
 
 @Entity
