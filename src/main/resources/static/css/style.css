@@ -3,11 +3,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
-    font-family: 'Numans', sans-serif;
+
+    background-attachment: fixed;
 }
 .container
 {
-    margin-top: 30px;
+    margin-top: 60px;
 }
 .wrapper {
     margin-top: 40px;
@@ -93,4 +94,8 @@ input
 .btn
 {
     width: 100%;
+}
+.col-md-3
+{
+    display:inline;
 }
