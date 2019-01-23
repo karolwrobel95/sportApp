@@ -42,11 +42,12 @@ class PlaceController(
 
     @PostMapping("/add/")
     fun addPlace(@Valid @ModelAttribute placeAddDTO: PlaceAddDTO, result: BindingResult): String {
+        //wyłączona walidacja poki co
         placeService.verifyAndSavePlace(placeAddDTO, result)
         return if(result.hasErrors())
             "place_add"
         else
-        return  "redirect:../list/"
+            return  "redirect:../list/"
     }
 
 
@@ -56,4 +57,12 @@ class PlaceController(
         selectedPlace.verified = true
 
     }
+
+    @GetMapping("/{id}")
+    fun showPlaceDetails(@PathVariable id: String, model : Model ): String{
+        val current = placeRepository.findById(id.toInt()).get()
+        model.addAttribute("model",current)
+        return "place_detail"
+    }
+
 }

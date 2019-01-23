@@ -11,10 +11,13 @@ class PlaceService constructor(
         private val placeRepository: PlaceRepository
 ) {
 
+
+
     fun getPlacesToVerify() : List<Place>{
-        var allPlaces = placeRepository.findAll()
-        allPlaces.stream().filter { it.verified==false}
-        return  allPlaces
+        return placeRepository.findAll().filter { it.verified==false }
+        //var allPlaces = placeRepository.findAll()
+        //allPlaces.stream().filter { it.verified==false}
+        //return  allPlaces
     }
 
     fun placesList(): List<Place> {

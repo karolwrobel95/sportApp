@@ -40,8 +40,10 @@ class EventController constructor(
         return "redirect: ../{id}/"
     }
 
-    @GetMapping("/{id}/")
-    fun showEventDetails(@PathVariable id: Int): String{
-        return "event_details"
+    @GetMapping("/{id}")
+    fun showEventDetails(@PathVariable id: String, model : Model ): String{
+        val current = eventRepository.findById(id.toInt()).get()
+        model.addAttribute("model",current)
+        return "event_detail"
     }
 }

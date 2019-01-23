@@ -25,7 +25,7 @@
         <th:block th:each="row :${placeList}">
             <!--/*@thymesVar id="row" type="com.gpch.login.model.Place"*/-->
             <div class="row">
-                <form action="#" th:action="@{/places/verify/{path}(path=${row.id})}" method="post">
+                <form action="#" th:action="@{/places/{path}(path=${row.id})}" method="get">
                     <div class="col-md-3" th:text="${row.name}">
                         nazwa
                     </div>
@@ -35,12 +35,10 @@
                     <div class="col-md-3" th:text="${row.sports}">
                         Sporty
                     </div>
-                    <button type="submit">Weryfikuj</button>
+                    <button type="submit">Podgląd</button>
                 </form>
             </div>
-
         </th:block>
-    </form>
 </div>
 
 </body>
