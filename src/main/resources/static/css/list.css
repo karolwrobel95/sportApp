@@ -2,18 +2,25 @@ body {
     background-image: url('http://metropoliabydgoska.pl/wp-content/uploads/2018/01/pi%C5%82ka-no%C5%BCna-boisko-murawa-freeimages-1200x800.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100%;
-    font-family: 'Numans', sans-serif;
+
 }
 .container
 {
-    margin-top: 100px;
-
-
+    margin-top: 30px;
 }
-.wrapper {
-    margin-top: 80px;
-    margin-bottom: 20px;
+
+.form-signin {
+    max-width: 1000px;
+    padding: 30px 38px 66px;
+    margin: 0 auto;
+    background-color: rgba(240,240,240,0.7);
+    border: 3px solid rgba(0,100,255,0.2);
+    border-radius: 15px 5px;
+    box-shadow: black 3px 3px 20px;
+    margin-bottom: 15px;
+    font-size: larger;
 
 }
 
@@ -31,14 +38,14 @@ body {
     opacity: 1;
 }
 
-input[type="text"] {
+input:first-child {
     margin-bottom: 0px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     opacity: 1;
 }
 
-input[type="password"] {
+input {
     margin-bottom: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -58,5 +65,46 @@ input:focus {
     body
     {
         background-size: auto;
+
     }
+
+}
+form
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.form-group
+{
+    margin: fill;
+}
+
+input
+{
+    width: 100%;
+}
+.form-horizontal h2
+{
+    text-align:center;
+}
+.btn
+{
+    width: 100%;
+}
+col-md-3
+{
+
+}
+
+.row
+{
+    font-family: 'Lato', cursive;
+    font-weight: 700;
+    width: 100%;
+}
+.btn-md
+{
+    margin: 15px 0px;
 }
