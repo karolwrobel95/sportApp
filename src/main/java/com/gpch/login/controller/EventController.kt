@@ -35,7 +35,7 @@ class EventController constructor(
     fun saveEvent(@Valid @ModelAttribute eventAddDTO: EventAddDTO,result: BindingResult,authentication: Authentication, model: Model): String{
         if(result.hasErrors())
             return "event_create"
-        val verifyPlace = eventService.checkPlaceAvailability(eventAddDTO.place!!)
+        //val verifyPlace = eventService.checkPlaceAvailability(eventAddDTO.place!!)
         eventService.saveEventDetails(eventAddDTO)
         return "redirect: ../{id}/"
     }

@@ -23,7 +23,6 @@ class PlaceController(
         val placesList = placeService.placesList()
         println("PlaceList: $placesList")
         model.addAttribute("placeList",placesList )
-
         return "place_list"
     }
 
@@ -41,12 +40,13 @@ class PlaceController(
         return "place_add"
     }
 
+    @PostMapping("/add/")
     fun addPlace(@Valid @ModelAttribute placeAddDTO: PlaceAddDTO, result: BindingResult): String {
         placeService.verifyAndSavePlace(placeAddDTO, result)
         return if(result.hasErrors())
             "place_add"
         else
-            "redirect:../list/"
+        return  "redirect:../list/"
     }
 
 

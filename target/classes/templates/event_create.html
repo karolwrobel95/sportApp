@@ -16,59 +16,54 @@
             <form autocomplete="off" th:object="${eventAddDTO}" method="post" class="form-horizontal"
                   role="form">
                 <h2>Stwórz wydarzenie</h2>
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <label th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"
-                                   class="validation-message"></label>
-                            <input type="date" th:field="*{startDate}" placeholder="Data rozpoczęcia"
-                                   class="form-control"/>
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"
+                               class="validation-message"></label>
+                        <input type="date" th:field="*{startDate}" placeholder="Data rozpoczęcia"
+                               class="form-control"/>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <label th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}"
-                                   class="validation-message"></label>
-                            <input type="text" th:field="*{duration}"
-                                   placeholder="Czas rezerwacji w min" class="form-control"/>
-                        </div>
-                        <div class="col-sm-9">
-                            <label th:if="${#fields.hasErrors('maxUsersAmount')}" th:errors="*{maxUsersAmount}"
-                                   class="validation-message"></label>
-                            <input type="text" th:field="*{maxUsersAmount}"
-                                   placeholder="Max liczba uczestników" class="form-control"/>
-                        </div>
-                        <div class="col-sm-9">
-                            <label th:if="${#fields.hasErrors('minUsersAmount')}" th:errors="*{minUsersAmount}"
-                                   class="validation-message"></label>
-                            <input type="text" th:field="*{minUsersAmount}"
-                                   placeholder="Min liczba uczestników" class="form-control"/>
-                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{duration}"
+                               placeholder="Czas rezerwacji w min" class="form-control"/>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <select name="cars" th:field="*{place}">
-<<<<<<< HEAD
-                                <th:block th:each="row :${places}">
-                                    <option value="${${row.id}" th:text="${row.street}"></option>
-=======
-                                <th:block th:each="row : ${places}">
-                                    <option value="${${row.id}">[[${row.street}]]</option>
->>>>>>> origin/tmp
-                                </th:block>
-                            </select>
-                            <label
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('maxUsersAmount')}" th:errors="*{maxUsersAmount}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{maxUsersAmount}"
+                               placeholder="Max liczba uczestników" class="form-control"/>
+                    </div>
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('minUsersAmount')}" th:errors="*{minUsersAmount}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{minUsersAmount}"
+                               placeholder="Min liczba uczestników" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <select name="cars" th:field="*{place}">
+                            <th:block th:each="row :${places}">
+                                <option value="${${row.id}" th:text="${row.street}"></option>
+                            </th:block>
+                        </select>
+                        <label
                                 th:if="${#fields.hasErrors('place')}" th:errors="*{place}"
                                 class="validation-message"></label>
-                        </div>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <button type="submit" class="btn btn-primary btn-block">Stwórz wydarzenie</button>
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary btn-block">Stwórz wydarzenie</button>
                     </div>
+                </div>
 
-                    <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
 
             </form>
         </div>
