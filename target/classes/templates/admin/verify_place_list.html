@@ -22,22 +22,25 @@
             Sporty
         </div>
     </div>
-    <th:block th:each="row :${placeList}">
-        <!--/*@thymesVar id="row" type="com.gpch.login.model.Place"*/-->
-        <div class="row">
-            <div class="col-md-3" th:text="${row.name}">
-                nazwa
+        <th:block th:each="row :${placeList}">
+            <!--/*@thymesVar id="row" type="com.gpch.login.model.Place"*/-->
+            <div class="row">
+                <form action="#" th:action="@{/places/verify/{path}(path=${row.id})}" method="post">
+                    <div class="col-md-3" th:text="${row.name}">
+                        nazwa
+                    </div>
+                    <div class="col-md-3" th:text="${row.street +' '+ row.streetNo+' ' + row.city}">
+                        Adres
+                    </div>
+                    <div class="col-md-3" th:text="${row.sports}">
+                        Sporty
+                    </div>
+                    <button type="submit">Weryfikuj</button>
+                </form>
             </div>
-            <div class="col-md-3" th:text="${row.street +' '+ row.streetNo+' ' + row.city}">
-                Adres
-            </div>
-            <div class="col-md-3" th:text="${row.sports}">
-                Sporty
-            </div>
-            <button class="col-md-3" th:action="@{/verify}" th:method="post">Weryfikuj</button>
-        </div>
 
-    </th:block>
+        </th:block>
+    </form>
 </div>
 
 </body>

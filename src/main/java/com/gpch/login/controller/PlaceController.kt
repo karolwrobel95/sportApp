@@ -2,6 +2,7 @@ package com.gpch.login.controller
 
 
 import com.gpch.login.dto.PlaceAddDTO
+import com.gpch.login.repository.PlaceRepository
 import com.gpch.login.service.PlaceService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -13,7 +14,8 @@ import javax.validation.Valid
 @Controller
 @RequestMapping("/places/")
 class PlaceController(
-        private val placeService: PlaceService
+        private val placeService: PlaceService,
+        private val placeRepository: PlaceRepository
 ) {
 
     @GetMapping("/list/")
@@ -39,7 +41,6 @@ class PlaceController(
         return "place_add"
     }
 
-    @PostMapping("/add/")
     fun addPlace(@Valid @ModelAttribute placeAddDTO: PlaceAddDTO, result: BindingResult): String {
         placeService.verifyAndSavePlace(placeAddDTO, result)
         return if(result.hasErrors())
@@ -49,9 +50,11 @@ class PlaceController(
     }
 
 
-    @RequestMapping("/verify_place_list/")
-    fun registration(@ModelAttribute placeAddDTO: PlaceAddDTO) : String {
-        placeAddDTO.verified = true
-        return "verify_place_list"
+    @PostMapping("/verify/{id}")
+    fun verify(@PathVariable id : String)  {
+        val selectedPlace = placeRepository.findById(id.toInt()).get()
+        selectedPlace.verified = true
+        this.
+
     }
 }
