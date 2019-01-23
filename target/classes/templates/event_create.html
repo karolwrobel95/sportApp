@@ -47,8 +47,13 @@
                     <div class="form-group">
                         <div class="col-sm-9">
                             <select name="cars" th:field="*{place}">
+<<<<<<< HEAD
                                 <th:block th:each="row :${places}">
                                     <option value="${${row.id}" th:text="${row.street}"></option>
+=======
+                                <th:block th:each="row : ${places}">
+                                    <option value="${${row.id}">[[${row.street}]]</option>
+>>>>>>> origin/tmp
                                 </th:block>
                             </select>
                             <label

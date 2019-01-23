@@ -54,7 +54,6 @@ class PlaceController(
     fun verify(@PathVariable id : String)  {
         val selectedPlace = placeRepository.findById(id.toInt()).get()
         selectedPlace.verified = true
-        this.
 
     }
 }
