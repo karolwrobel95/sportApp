@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista eventów</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<a class="btn btn-md btn-warning btn-block" type="button" th:href="@{../create/}">Stwórz event</a>
+&nbsp;
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">Opis</div>
+        <div class="col-md-3">Start</div>
+        <div class="col-md-3">Czas</div>
+        <div class="col-md-3">Uczestnicy</div>
+        <div class="col-md-3"></div>
+    </div>
+    <th:block th:each="row :${events}">
+        <!--/*@thymesVar id="row" type="com.gpch.login.dto.Event."*/-->
+        <div class="row">
+            <div class="col-md-3" th:text="${row.description}">default</div>
+            <div class="col-md-3" th:text="${row.startDate}">default</div>
+            <div class="col-md-3" th:text="${row.duration}">default</div>
+            <div class="col-md-3">[[*{maxUsersAccount}]]/[[*{currentUserNo}]]</div>
+            <div class="col-md-3"><button type="button" th:href="@{/join/}"/></div>
+        </div>
+
+    </th:block>
+</div>
+
+</body>
+</html>

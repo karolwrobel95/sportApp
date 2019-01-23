@@ -26,7 +26,7 @@ class EventController constructor(
     }
 
     @GetMapping("/create/")
-    fun createEvent(model: Model): String{
+    fun createEvent(@ModelAttribute eventAddDTO: EventAddDTO,model: Model): String{
         model.addAttribute("places", placeRepository.findAll())
         return "event_create"
     }
